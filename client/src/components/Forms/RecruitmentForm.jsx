@@ -195,41 +195,41 @@ export default function RecruitmentForm() {
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
                   activeSection === "personal"
-                    ? "bg-blue-500" // current section (dark blue)
+                    ? "bg-blue-500" 
                     : activeSection === "skills" ||
                       activeSection === "profiles" ||
                       activeSection === "motivation"
-                    ? "bg-green-500" // completed (green)
-                    : "bg-gray-500" // not yet reached (light blue)
+                    ? "bg-green-500" 
+                    : "bg-gray-500" 
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
                   activeSection === "skills"
-                    ? "bg-blue-500" // current section (dark blue)
+                    ? "bg-blue-500" 
                     : activeSection === "profiles" ||
                       activeSection === "motivation"
-                    ? "bg-green-500" // completed (green)
-                    : "bg-gray-500" // not yet reached (light blue)
+                    ? "bg-green-500" 
+                    : "bg-gray-500" 
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
                   activeSection === "profiles"
-                    ? "bg-blue-500" // current section (dark blue)
+                    ? "bg-blue-500" 
                     : activeSection === "motivation"
-                    ? "bg-green-500" // completed (green)
-                    : "bg-gray-500" // not yet reached (light blue)
+                    ? "bg-green-500" 
+                    : "bg-gray-500" 
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
                   activeSection === "motivation"
-                    ? "bg-blue-500" // current section (dark blue)
-                    : "bg-gray-500" // not yet reached (light blue)
+                    ? "bg-blue-500" 
+                    : "bg-gray-500" 
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
@@ -329,17 +329,6 @@ export default function RecruitmentForm() {
                         <input
                           type="radio"
                           name="year"
-                          value="1"
-                          checked={formData.year === "1"}
-                          onChange={handleChange}
-                          className="h-5 w-5 text-blue-500"
-                        />
-                        <span className="text-blue-300">1st Year</span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer">
-                        <input
-                          type="radio"
-                          name="year"
                           value="2"
                           checked={formData.year === "2"}
                           onChange={handleChange}
@@ -423,7 +412,7 @@ export default function RecruitmentForm() {
                       setFormData({ ...formData, skills: e.target.value })
                     }
                     className="w-full px-4 py-2 bg-gray-800 text-gray-100 border border-blue-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    rows="2"
+                    rows="3"
                   />
                 </div>
               </motion.div>
