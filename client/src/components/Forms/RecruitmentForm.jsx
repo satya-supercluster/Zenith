@@ -473,7 +473,7 @@ export default function RecruitmentForm() {
                     </label>
                     <input
                       id="github"
-                      type="url"
+                      type="text"
                       name="github"
                       placeholder="https://github.com/yourusername"
                       value={formData.github}
