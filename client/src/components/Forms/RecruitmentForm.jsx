@@ -15,6 +15,7 @@ export default function RecruitmentForm() {
     scholarNo: "",
     branch: "",
     year: "",
+    contact:"",
     email: "",
     skills: "",
     portfolio: "",
@@ -76,6 +77,12 @@ export default function RecruitmentForm() {
       if (!formData.year) {
         newErrors.year = "Please select your year";
       }
+      if (!formData.contact) {
+        newErrors.contact = "Please enter your contact number";
+      }
+      else if(formData.contact.length!=10){
+        newErrors.contact = "Please enter a valid 10 digit contact number";
+      }
     } else if (section === "skills") {
       // Skills section validation Nahi Chahiye Vaise To
     } else if (section === "profiles") {
@@ -132,7 +139,7 @@ export default function RecruitmentForm() {
       return;
     }
     setIsSubmitting(true);
-
+    console.log(formData)
     try {
       const response = await fetch("https://zenith-club-manit.onrender.com/api/recruit", {
         method: "POST",
@@ -155,6 +162,7 @@ export default function RecruitmentForm() {
           scholarNo: "",
           branch: "",
           year: "",
+          contact:"",
           email: "",
           skills: "",
           portfolio: "",
@@ -316,6 +324,28 @@ export default function RecruitmentForm() {
                     {errors.branch && (
                       <p className="mt-1 text-xs text-red-400 font-semibold">
                         {errors.branch}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="contact"
+                      className="block text-sm font-semibold text-blue-300 mb-1"
+                    >
+                      Contact <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="contact"
+                      type="text"
+                      name="contact"
+                      value={formData.contact}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 bg-gray-800 text-gray-100 border border-blue-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    {errors.contact && (
+                      <p className="mt-1 text-xs text-red-400 font-semibold">
+                        {errors.contact}
                       </p>
                     )}
                   </div>

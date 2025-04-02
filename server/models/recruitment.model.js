@@ -14,6 +14,7 @@ const JuniorSchema = new mongoose.Schema(
         type:String,
         require:true
     },
+    contact:String,
     branch: String,
     year: String,
     skills: String,
