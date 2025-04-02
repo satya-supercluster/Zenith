@@ -186,7 +186,7 @@ export default function RecruitmentForm() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-950 tracking-widest">
+    <div className="min-h-screen py-12 px-4 sm:px-6 flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-950">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
