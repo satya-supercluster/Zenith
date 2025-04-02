@@ -36,10 +36,6 @@ export default function RecruitmentForm() {
     "Competitive Programming",
     "Open Source",
     "UI/UX Design",
-    "Game Development",
-    "Cloud Computing",
-    "Blockchain",
-    "IoT",
   ];
 
   const handleChange = (e) => {
@@ -182,7 +178,7 @@ export default function RecruitmentForm() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 max-sm:my-8 flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-950 tracking-widest">
+    <div className="min-h-screen py-12 px-4 sm:px-6 flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-950 tracking-widest">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -197,25 +193,42 @@ export default function RecruitmentForm() {
             <div className="flex space-x-1 sm:space-x-2">
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
-                  activeSection === "personal" ? "bg-blue-400" : "bg-blue-700"
+                  activeSection === "personal"
+                    ? "bg-blue-500" // current section (dark blue)
+                    : activeSection === "skills" ||
+                      activeSection === "profiles" ||
+                      activeSection === "motivation"
+                    ? "bg-green-500" // completed (green)
+                    : "bg-gray-500" // not yet reached (light blue)
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
-                  activeSection === "skills" ? "bg-blue-400" : "bg-blue-700"
+                  activeSection === "skills"
+                    ? "bg-blue-500" // current section (dark blue)
+                    : activeSection === "profiles" ||
+                      activeSection === "motivation"
+                    ? "bg-green-500" // completed (green)
+                    : "bg-gray-500" // not yet reached (light blue)
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
-                  activeSection === "profiles" ? "bg-blue-400" : "bg-blue-700"
+                  activeSection === "profiles"
+                    ? "bg-blue-500" // current section (dark blue)
+                    : activeSection === "motivation"
+                    ? "bg-green-500" // completed (green)
+                    : "bg-gray-500" // not yet reached (light blue)
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
               <motion.div
                 className={`h-2 w-12 sm:w-24 rounded-full ${
-                  activeSection === "motivation" ? "bg-blue-400" : "bg-blue-700"
+                  activeSection === "motivation"
+                    ? "bg-blue-500" // current section (dark blue)
+                    : "bg-gray-500" // not yet reached (light blue)
                 } transition-colors`}
                 whileHover={{ scale: 1.05 }}
               />
