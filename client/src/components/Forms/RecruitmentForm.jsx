@@ -141,6 +141,7 @@ export default function RecruitmentForm() {
       });
 
       if (response.status === 400) {
+        setActiveSection("profiles");
         setErrors({ email: "Email already registered" });
       } else if (response.status === 500) {
         alert("Something went wrong. Please try again.");
