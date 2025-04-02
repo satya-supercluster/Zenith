@@ -21,7 +21,7 @@ const recruitController = async (req, res) => {
 
     const junior = await Junior.create(req.body);
 
-    return res.status(201).json({
+    return res.status(200).json({
       success: true,
       data: junior,
     });

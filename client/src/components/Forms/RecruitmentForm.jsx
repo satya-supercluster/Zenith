@@ -596,7 +596,7 @@ export default function RecruitmentForm() {
             )}
           </AnimatePresence>
 
-          <div className="mt-8 flex justify-between">
+          <div className="mt-8 flex justify-between gap-2">
             {activeSection !== "personal" ? (
               <motion.button
                 type="button"
@@ -605,7 +605,7 @@ export default function RecruitmentForm() {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-2 text-blue-400 border border-blue-500 rounded-lg font-semibold flex items-center"
               >
-                <FontAwesomeIcon icon={faArrowLeft} className="mr-2" /> Previous
+                <FontAwesomeIcon icon={faArrowLeft} className="mr-2" /> Prev
               </motion.button>
             ) : (
               <div></div>
@@ -641,7 +641,7 @@ export default function RecruitmentForm() {
                     </div>
                   </div>
                 ) : (
-                  "Submit Registration"
+                  "Submit"
                 )}
               </motion.button>
             )}
