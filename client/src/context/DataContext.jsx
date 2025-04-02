@@ -18,8 +18,7 @@ export const DataProvider = ({ children }) => {
           setIsLoading(true);
           // Replace with your actual endpoint
           const response = await fetch(
-            // `https://zenith-club-manit.onrender.com/api/recruit/all`
-            "http://localhost:3001/api/recruit/all"
+            `https://zenith-club-manit.onrender.com/api/recruit/all`
           );
 
           if (!response.ok) {
@@ -30,7 +29,6 @@ export const DataProvider = ({ children }) => {
           setRegistrationData(result.data || []);
         } catch (err) {
           console.error("Error fetching data:", err);
-          setError(err.message);
         } finally {
           setIsLoading(false);
         }
