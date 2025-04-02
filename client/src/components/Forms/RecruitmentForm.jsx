@@ -139,7 +139,6 @@ export default function RecruitmentForm() {
       return;
     }
     setIsSubmitting(true);
-    console.log(formData)
     try {
       const response = await fetch("https://zenith-club-manit.onrender.com/api/recruit", {
         method: "POST",
