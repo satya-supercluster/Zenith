@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Ye Routes ka Section
 import recruitmentRouter from "./routes/recruitment.router.js";
-app.use("/api/rec",recruitmentRouter);
+app.use("/api",recruitmentRouter);
 
 import job from "./service/cronJob.js";
 
