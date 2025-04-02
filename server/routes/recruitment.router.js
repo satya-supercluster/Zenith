@@ -1,6 +1,6 @@
-const router = require("express").Router();
-const recruitController = require("../controllers/recruitment.controller");
+import express from "express";
+const recruitmentRouter=express.Router();
+import recruitController from "../controllers/recruitment.controller.js"
+recruitmentRouter.post("/user", recruitController);
 
-router.post("/recruit",recruitController);
-
-module.exports = router;
+export default recruitmentRouter

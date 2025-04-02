@@ -1,4 +1,4 @@
-const Junior = require("../models/recruitment.model");
+import Junior from "../models/recruitment.model.js"
 
 const recruitController = async (req, res) => {
   try {
@@ -28,7 +28,7 @@ const recruitController = async (req, res) => {
   } catch (error) {
     if (error.name === "ValidationError") {
       const messages = Object.values(error.errors).map((val) => val.message);
-      
+
       return res.status(400).json({
         success: false,
         error: messages,
@@ -43,5 +43,5 @@ const recruitController = async (req, res) => {
   }
 };
 
-module.exports=recruitController;
+export default recruitController;
 

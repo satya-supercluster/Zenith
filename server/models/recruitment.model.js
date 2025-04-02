@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-
+import mongoose from "mongoose";
 const JuniorSchema = new mongoose.Schema(
   {
     name: {
@@ -36,4 +35,4 @@ const JuniorSchema = new mongoose.Schema(
 
 const Junior = mongoose.model("Junior", JuniorSchema);
 
-module.exports = Junior;
+export default Junior
