@@ -496,7 +496,7 @@ export default function RecruitmentForm() {
                     </label>
                     <input
                       id="portfolio"
-                      type="url"
+                      type="text"
                       name="portfolio"
                       placeholder="https://your-portfolio.com"
                       value={formData.portfolio}
