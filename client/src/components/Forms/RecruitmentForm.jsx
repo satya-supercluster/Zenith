@@ -589,7 +589,7 @@ export default function RecruitmentForm() {
                       {formData.whyJoin.length} characters
                     </p>
                     {errors.whyJoin && (
-                      <p className="text-xs text-red-400 font-semibold">
+                      <p className="text-xs text-right text-red-400 font-semibold">
                         {errors.whyJoin}
                       </p>
                     )}
