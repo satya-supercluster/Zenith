@@ -19,14 +19,15 @@ app.use(express.urlencoded({ extended: true }));
 
 // Ye Routes ka Section
 import recruitmentRouter from "./routes/recruitment.router.js";
+import adminRouter from "./routes/admin.router.js"
 app.use("/api",recruitmentRouter);
+app.use("/api/admin",adminRouter);
 
+// Cron Job
 import job from "./service/cronJob.js";
 
-console.log(__dirname)
+// Static Routing - Serving Client Routes
 app.use(express.static(path.join(__dirname, "client", "dist")));
-
-
 app.get(/^(?!\/api\/).+/, (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });

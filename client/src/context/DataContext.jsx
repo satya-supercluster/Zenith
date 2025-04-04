@@ -3,15 +3,10 @@ const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 export const DataProvider = ({ children }) => {
     const isConstructed=false;
-    const [auth,setAuth]=useState(false);
+    const [auth,setAuth]=useState(null);
     const [isLoading,setIsLoading]=useState(false);
-    const [passcode,setPasscode]=useState("");
     const [registrationData,setRegistrationData]=useState([]);
-    useEffect(()=>{
-      if(passcode=="satyam!2026"){
-        setAuth(true);
-      }
-    },[passcode])
+
     useEffect(()=>{
       const fetchData = async () => {
         try {
@@ -35,6 +30,7 @@ export const DataProvider = ({ children }) => {
       };
       if (auth) fetchData();
     },[auth]);
+
   return (
     <DataContext.Provider
       value={{
@@ -43,8 +39,6 @@ export const DataProvider = ({ children }) => {
         setAuth,
         isLoading,
         setIsLoading,
-        passcode,
-        setPasscode,
         registrationData
       }}
     >

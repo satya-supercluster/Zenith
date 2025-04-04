@@ -30,7 +30,7 @@ const RecruitmentList = () => {
   }, [registrationData, search]);
 
   return (
-    <div className="min-h-screen bg-slate-700 break-words">
+    <div className="min-h-screen break-words">
       <nav className="fixed w-full flex items-center justify-between p-4 sm:px-20 h-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
         <NavLink
           to="/"

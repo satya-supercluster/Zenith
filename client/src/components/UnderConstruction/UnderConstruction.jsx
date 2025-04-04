@@ -35,7 +35,7 @@ const UnderConstruction = () => {
 
   return (
     <motion.div
-      className="min-h-screen flex flex-col items-center text-center justify-center text-gray-100 p-1 bg-gray-900"
+      className="min-h-screen flex flex-col items-center text-center justify-center text-gray-100 p-1"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
