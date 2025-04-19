@@ -39,7 +39,9 @@ export const DataProvider = ({ children }) => {
         setAuth,
         isLoading,
         setIsLoading,
-        registrationData
+        registrationData,
+        it,
+        setIt
       }}
     >
       {children}
