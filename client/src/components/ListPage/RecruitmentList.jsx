@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faFileExcel } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { useData } from "@/context/DataContext";
 
@@ -29,6 +29,57 @@ const RecruitmentList = () => {
     });
   }, [registrationData, search]);
 
+  // Function to download data as CSV
+  const downloadExcel = () => {
+    const headers = [
+      "Name",
+      "Scholar No",
+      "Email",
+      "Year",
+      "Contact",
+      "Branch",
+      "Skills",
+      "GitHub",
+      "CodeForces",
+      "CodeChef",
+      "LeetCode",
+      "Portfolio",
+      "Why Join",
+    ];
+
+    // Create CSV content
+    const csvContent = [
+      headers.join(","),
+      ...filteredData.map((profile) =>
+        [
+          `"${profile.name || ""}"`,
+          `"${profile.scholarNo || ""}"`,
+          `"${profile.email || ""}"`,
+          `"${profile.year || ""}"`,
+          `"${profile.contact || ""}"`,
+          `"${profile.branch || ""}"`,
+          `"${profile.skills || ""}"`,
+          `"${profile.github || ""}"`,
+          `"${profile.codeforces || ""}"`,
+          `"${profile.codechef || ""}"`,
+          `"${profile.leetcode || ""}"`,
+          `"${profile.portfolio || ""}"`,
+          `"${profile.whyJoin?.replace(/"/g, '""') || ""}"`,
+        ].join(",")
+      ),
+    ].join("\n");
+
+    // Create a blob and download link
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "recruitment_data.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen break-words">
       <nav className="fixed w-full flex items-center justify-between p-4 sm:px-20 h-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
@@ -38,7 +89,7 @@ const RecruitmentList = () => {
         >
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
         </NavLink>
-        <div className="flex-1 mx-4 flex justify-center">
+        <div className="flex-1 mx-4 flex justify-center items-center gap-2">
           <input
             type="text"
             placeholder="Search profiles..."
@@ -46,6 +97,13 @@ const RecruitmentList = () => {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full max-w-xs sm:max-w-sm md:max-w-md border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-600 font-extrabold"
           />
+          <button
+            onClick={downloadExcel}
+            className="bg-green-600 hover:bg-green-700 text-white font-medium sm:py-2 sm:px-4 rounded-md max-sm:p-1 transition-colors duration-300 flex items-center"
+            title="Download as Excel"
+          >
+            <FontAwesomeIcon icon={faFileExcel} className="mr-2" />
+          </button>
         </div>
       </nav>
 

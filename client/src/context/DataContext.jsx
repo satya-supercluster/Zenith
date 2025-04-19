@@ -6,14 +6,14 @@ export const DataProvider = ({ children }) => {
     const [auth,setAuth]=useState(null);
     const [isLoading,setIsLoading]=useState(false);
     const [registrationData,setRegistrationData]=useState([]);
-
+    const [it,setIt]=useState(null);
     useEffect(()=>{
       const fetchData = async () => {
         try {
           setIsLoading(true);
           // Replace with your actual endpoint
           const response = await fetch(
-            `https://zenith-club-manit.onrender.com/api/recruit/all`
+            `https://zenith-club-manit.onrender.com/api/recruit/all?it=${it}`
           );
 
           if (!response.ok) {

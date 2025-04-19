@@ -23,6 +23,7 @@ import adminRouter from "./routes/admin.router.js"
 app.use("/api",recruitmentRouter);
 app.use("/api/admin",adminRouter);
 
+
 // Cron Job
 import job from "./service/cronJob.js";
 
@@ -31,6 +32,9 @@ app.use(express.static(path.join(__dirname, "client", "dist")));
 app.get(/^(?!\/api\/).+/, (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
+
+
+
 
 // Listening to the PORT
 const PORT = process.env.PORT || 3001;

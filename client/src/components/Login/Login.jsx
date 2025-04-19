@@ -4,7 +4,7 @@ import { useData } from "../../context/DataContext";
 
 const Login = () => {
 
-  const {setAuth}=useData();
+  const {setAuth,setIt}=useData();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -33,6 +33,7 @@ const Login = () => {
 
       const data = await response.json();
       localStorage.setItem("token", data?.token);
+      setIt(username);
       setAuth(data?.admin);
     } catch (err) {
       setError(err.message || "Authentication failed!");
