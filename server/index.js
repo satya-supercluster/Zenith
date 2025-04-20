@@ -4,12 +4,12 @@ import cors from "cors"
 import morgan from "morgan";
 const app = express();
 import dotenv from "dotenv"; dotenv.config();
-import path from "path";
+// import path from "path";
 
 // Ye DB connection
 import connectDB from "./config/database.js";
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 // Ye Middlewares ka Section
 app.use(cors());
@@ -28,10 +28,10 @@ app.use("/api/admin",adminRouter);
 import job from "./service/cronJob.js";
 
 // Static Routing - Serving Client Routes
-app.use(express.static(path.join(__dirname, "client", "dist")));
-app.get(/^(?!\/api\/).+/, (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+// app.use(express.static(path.join(__dirname, "client", "dist")));
+// app.get(/^(?!\/api\/).+/, (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+// });
 
 
 
