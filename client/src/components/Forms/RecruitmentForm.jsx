@@ -140,11 +140,14 @@ export default function RecruitmentForm() {
     }
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://zenith-club-manit.onrender.com/api/recruit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://zenith-manit.onrender.com/api/recruit",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.status === 400) {
         setActiveSection("profiles");

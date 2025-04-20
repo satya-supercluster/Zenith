@@ -21,11 +21,14 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://zenith-club-manit.onrender.com/api/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch(
+        "https://zenith-manit.onrender.com/api/admin/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Invalid credentials");
