@@ -17,6 +17,11 @@ app.use(express.json());
 app.use(morgan("tiny"));
 app.use(express.urlencoded({ extended: true }));
 
+
+app.use("/",(req,res)=>{
+  console.log("object");
+})
+
 // Ye Routes ka Section
 import recruitmentRouter from "./routes/recruitment.router.js";
 import adminRouter from "./routes/admin.router.js"
