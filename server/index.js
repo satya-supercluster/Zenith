@@ -18,9 +18,10 @@ app.use(morgan("tiny"));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use("/",(req,res)=>{
-  console.log("object");
-})
+app.use((req, res, next) => {
+  console.log(req.method, req.url); // ✅ Good
+  next();
+});
 
 // Ye Routes ka Section
 import recruitmentRouter from "./routes/recruitment.router.js";
