@@ -43,8 +43,8 @@ import job from "./service/cronJob.js";
 
 // Listening to the PORT
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-    connectDB();
-    job.start();
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  connectDB();
+  job.start();
+  console.log(`Server is running on port ${PORT}`);
 });
