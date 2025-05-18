@@ -232,7 +232,6 @@ export default function RecruitmentResults() {
                       </div>
                       <div className="ml-3">
                         <h3 className="text-blue-100 font-medium">{name}</h3>
-                        <p className="text-blue-300 text-sm">New Member</p>
                       </div>
                     </div>
                   </motion.div>
